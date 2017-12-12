@@ -1,6 +1,8 @@
-;;; festival.el --- emacs interface into festival.
-;; Copyright 1999,2000 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.6 $
+;;; festival.el --- Emacs interface into festival.
+
+;; Copyright (C) 1999, 2000  Dave Pearson
+
+;; Author: Dave Pearson <davep@davep.org>
 
 ;; festival.el is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
