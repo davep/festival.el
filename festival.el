@@ -1,9 +1,21 @@
-;;; festival.el --- emacs interface into festival.
-;; Copyright 1999,2000 by Dave Pearson <davep@davep.org>
-;; $Revision: 1.6 $
+;;; festival.el --- Emacs interface into festival.
 
-;; festival.el is free software distributed under the terms of the GNU
-;; General Public Licence, version 2. For details see the file COPYING.
+;; Copyright (C) 1999, 2000  Dave Pearson
+
+;; Author: Dave Pearson <davep@davep.org>
+
+;; festival.el is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 2, or (at your option)
+;; any later version.
+;;
+;; festival.el is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with festival.el.  If not, see http://www.gnu.org/licenses.
 
 ;;; Commentary:
 ;; 
@@ -252,4 +264,5 @@ See the festival documentation for a list of valid modes."
   (interactive)
   (festival-say (yow)))
 
+(provide 'festival)
 ;;; festival.el ends here
