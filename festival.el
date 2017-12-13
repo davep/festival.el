@@ -254,4 +254,5 @@ See the festival documentation for a list of valid modes."
   (festival-say (yow)))
 
 (provide 'festival)
+
 ;;; festival.el ends here
