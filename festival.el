@@ -105,7 +105,7 @@ Set this to NIL if you don't want a buffer created."
     (kill-process festival-process))
   (setq festival-process nil))
 
-(defun festivalp ()
+(defun festival-p ()
   "Return t if a festival process is running, nil if not.
 
 Note that if `festival-auto-start' is set to t this function will always
@@ -121,7 +121,7 @@ you."
   "Send text to the festival process, FORMAT is a `format' format string.
 
 ARGS is the arguments passed to `format'."
-  (when (festivalp)
+  (when (festival-p)
     (process-send-string festival-process (apply #'format format args))))
 
 ;;;###autoload
@@ -145,7 +145,7 @@ See the festival documentation for a list of valid modes."
 
 (defun festival-read-region-in-buffer (buffer start end)
   "Read region from BUFFER bounding START to END."
-  (when (festivalp)
+  (when (festival-p)
     (let ((temp-file (make-temp-name "/tmp/emacs-festival-")))
       (with-current-buffer buffer
         (write-region start end temp-file nil 0)
