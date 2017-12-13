@@ -22,8 +22,8 @@
 ;;; Commentary:
 ;;
 ;; festival.el provides a simple interface into the festival speech
-;; synthesis program <URL:http://www.cstr.ed.ac.uk/projects/festival.html>
-;; from Emacs Lisp.
+;; synthesis program <URL:http://www.cstr.ed.ac.uk/projects/festival/> from
+;; Emacs Lisp.
 ;;
 ;; BTW, it was only once I'd more or less finished writing the first version
 ;; of this that I noticed that a festival.el comes with festival itself
