@@ -3,6 +3,8 @@
 
 ;; Author: Dave Pearson <davep@davep.org>
 ;; Version: 1.6
+;; Keywords: games, speech
+;; URL: https://github.com/davep/festival.el
 
 ;; festival.el is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
