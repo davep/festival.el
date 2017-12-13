@@ -93,7 +93,7 @@ Set this to NIL if you don't want a buffer created."
   (let ((proc-name "festival"))
     (unless (get-process proc-name)
       (setq festival-process (start-process proc-name festival-buffer festival-program))
-      (process-kill-without-query festival-process)
+      (set-process-query-on-exit-flag festival-process nil)
       (festival-audio-mode festival-default-audio-mode)
       (funcall festival-default-voice))))
 
