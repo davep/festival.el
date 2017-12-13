@@ -22,7 +22,7 @@
 ;;
 ;; festival.el provides a simple interface into the festival speech
 ;; synthesis program <URL:http://www.cstr.ed.ac.uk/projects/festival.html>
-;; from emacs lisp.
+;; from Emacs Lisp.
 ;;
 ;; BTW, it was only once I'd more or less finished writing the first version
 ;; of this that I noticed that a festival.el comes with festival itself
@@ -70,7 +70,7 @@ Set this to NIL if you don't want a buffer created."
 
 (defcustom festival-voices-alist '(("english-male" . festival-voice-english-male)
                                    ("us-male"      . festival-voice-US-male))
-  "alist of voice name to set-function mappings."
+  "An alist of voice names to set-function mappings."
   :type  '(repeat (cons string function))
   :group 'festival)
 
@@ -105,7 +105,7 @@ Set this to NIL if you don't want a buffer created."
   (setq festival-process nil))
 
 (defun festivalp ()
-  "Return `t' if a festival process is running, NIL if not.
+  "Return t if a festival process is running, nil if not.
 
 Note that if `festival-auto-start' is set to t this function will always
 return t and, if a festival proecss isn't running, it will start one for
@@ -117,7 +117,9 @@ you."
     festivalp))
 
 (defun festival-send (format &rest args)
-  "Send text to the festival process, FORMAT is a `format' format string."
+  "Send text to the festival process, FORMAT is a `format' format string.
+
+ARGS is the arguments passed to `format'."
   (when (festivalp)
     (process-send-string festival-process (apply #'format format args))))
 
@@ -141,7 +143,7 @@ See the festival documentation for a list of valid modes."
   (festival-send "(tts_file \"%s\")\n" (expand-file-name file)))
 
 (defun festival-read-region-in-buffer (buffer start end)
-  "Read region START to END from BUFFER."
+  "Read region from BUFFER bounding START to END."
   (when (festivalp)
     (let ((temp-file (make-temp-name "/tmp/emacs-festival-")))
       (with-current-buffer buffer
@@ -158,7 +160,7 @@ See the festival documentation for a list of valid modes."
 
 ;;;###autoload
 (defun festival-read-region (start end)
-  "Read a region of text from the `current-buffer'."
+  "Read a region bounding START to END from the `current-buffer'."
   (interactive "r")
   (festival-read-region-in-buffer (current-buffer) start end))
 
@@ -184,7 +186,7 @@ See the festival documentation for a list of valid modes."
 
 ;;;###autoload
 (defun festival-voice (voice-name)
-  "Interactively set the voice."
+  "Interactively set the voice to VOICE-NAME."
   (interactive (list (completing-read "Voice: " festival-voices-alist nil t)))
   (funcall (cdr (assoc voice-name festival-voices-alist))))
 
@@ -231,7 +233,9 @@ See the festival documentation for a list of valid modes."
 
 ;;;###autoload
 (defun festival-describe-function (f)
-  "Talking version of `describe-function'."
+  "Read the description of function F.
+
+Talking version of `describe-function'."
   (interactive "aDescribe function: ")
   (with-temp-buffer
     (insert (documentation f))
