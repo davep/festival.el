@@ -33,18 +33,6 @@
 
 ;;; Code:
 
-;; Attempt to handle older/other emacs.
-(eval-and-compile
-  ;; If customize isn't available just use defvar instead.
-  (unless (fboundp 'defgroup)
-    (defmacro defgroup  (&rest rest) nil)
-    (defmacro defcustom (symbol init docstring &rest rest)
-      `(defvar ,symbol ,init ,docstring)))
-  ;; Seems pre-20 emacs doesn't have with-current-buffer.
-  (unless (fboundp 'with-current-buffer)
-    (defmacro with-current-buffer (buffer &rest body)
-      `(save-current-buffer (set-buffer ,buffer) ,@body))))
-
 ;; Customize options.
 
 (defgroup festival nil
