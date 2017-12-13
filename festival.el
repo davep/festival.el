@@ -210,8 +210,8 @@ See the festival documentation for a list of valid modes."
 (defun festival-hook-message ()
   "Hook `message' so that all passed text is spoken."
   (interactive)
-  (defadvice message (before festival-message (&rest ad-subr-args) activate)
-    (festival-say (apply #'format ad-subr-args))))
+  (defadvice message (before festival-message (format-string &rest ad-subr-args) activate)
+    (festival-say (apply #'format format-string ad-subr-args))))
 
 (defun festival-unhook-message ()
   "Undo the hook set by `festival-hook-message'."
