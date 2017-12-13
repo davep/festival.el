@@ -231,7 +231,7 @@ See the festival documentation for a list of valid modes."
 
 ;;;###autoload
 (defun festival-describe-function (f)
-  "Talking version of  `describe-function'."
+  "Talking version of `describe-function'."
   (interactive "aDescribe function: ")
   (with-temp-buffer
     (insert (documentation f))
