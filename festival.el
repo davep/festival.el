@@ -41,12 +41,12 @@
   :prefix "festival-")
 
 (defcustom festival-program "/usr/bin/festival"
-  "*Location of the festival program."
+  "Location of the festival program."
   :type  '(file :must-match t)
   :group 'festival)
 
 (defcustom festival-buffer "*festival*"
-  "*Name of buffer to attach to the festival process.
+  "Name of buffer to attach to the festival process.
 
 Set this to NIL if you don't want a buffer created."
   :type  '(choice (string :tag "Buffer name")
@@ -54,7 +54,7 @@ Set this to NIL if you don't want a buffer created."
   :group 'festival)
 
 (defcustom festival-default-audio-mode 'async
-  "*Default audio_mode for a new festival process."
+  "Default audio_mode for a new festival process."
   :type  '(choice (const async)
            (const sync)
            (const close)
@@ -63,19 +63,19 @@ Set this to NIL if you don't want a buffer created."
   :group 'festival)
 
 (defcustom festival-default-voice 'festival-voice-english-male
-  "*Default voice."
+  "Default voice."
   :type  '(choice (const :tag "English, male" festival-voice-english-male)
            (const :tag "US, male"      festival-voice-US-male))
   :group 'festival)
 
 (defcustom festival-voices-alist '(("english-male" . festival-voice-english-male)
                                    ("us-male"      . festival-voice-US-male))
-  "*alist of voice name to set-function mappings."
+  "alist of voice name to set-function mappings."
   :type  '(repeat (cons string function))
   :group 'festival)
 
 (defcustom festival-auto-start t
-  "*Should festival start when any of the functions are called?"
+  "Should festival start when any of the functions are called?"
   :type  'boolean
   :group 'festival)
 
