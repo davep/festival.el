@@ -1,6 +1,5 @@
 ;;; festival.el --- Emacs interface into festival.
-
-;; Copyright (C) 1999, 2000  Dave Pearson
+;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
 ;; Version: 1.6
