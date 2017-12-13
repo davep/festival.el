@@ -3,6 +3,7 @@
 ;; Copyright (C) 1999, 2000  Dave Pearson
 
 ;; Author: Dave Pearson <davep@davep.org>
+;; Version: 1.6
 
 ;; festival.el is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -18,7 +19,7 @@
 ;; along with festival.el.  If not, see http://www.gnu.org/licenses.
 
 ;;; Commentary:
-;; 
+;;
 ;; festival.el provides a simple interface into the festival speech
 ;; synthesis program <URL:http://www.cstr.ed.ac.uk/projects/festival.html>
 ;; from emacs lisp.
