@@ -247,12 +247,6 @@ See the festival documentation for a list of valid modes."
     (spook)
     (festival-read-buffer (current-buffer))))
 
-;;;###autoload
-(defun festival-yow ()
-  "Yow! It speaks!"
-  (interactive)
-  (festival-say (yow)))
-
 (provide 'festival)
 
 ;;; festival.el ends here
