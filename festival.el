@@ -50,7 +50,8 @@
   "Name of buffer to attach to the festival process.
 
 Set this to NIL if you don't want a buffer created."
-  :type  '(choice (string :tag "Buffer name")
+  :type  '(choice
+           (string :tag "Buffer name")
            (const  :tag "Don't attach a buffer" nil))
   :group 'festival)
 
@@ -65,7 +66,8 @@ Set this to NIL if you don't want a buffer created."
 
 (defcustom festival-default-voice 'festival-voice-english-male
   "Default voice."
-  :type  '(choice (const :tag "English, male" festival-voice-english-male)
+  :type  '(choice
+           (const :tag "English, male" festival-voice-english-male)
            (const :tag "US, male"      festival-voice-US-male))
   :group 'festival)
 
@@ -223,8 +225,8 @@ See the festival documentation for a list of valid modes."
 (defun festival-hook-error ()
   "Hook `error' so that all passed text is spoken."
   (interactive)
-  (defadvice error (before festival-error (&rest ad-subr-args) activate)
-    (festival-say (apply #'format ad-subr-args))))
+  (defadvice error (before festival-error (format-string &rest ad-subr-args) activate)
+    (festival-say (apply #'format format-string ad-subr-args))))
 
 (defun festival-unhook-error ()
   "Undo the hook set by `festival-hook-error'."
