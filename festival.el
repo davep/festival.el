@@ -244,8 +244,6 @@ Talking version of `describe-function'."
     (insert (documentation f))
     (festival-read-buffer (current-buffer))))
 
-;; And some other silly things.
-
 ;;;###autoload
 (defun festival-spook ()
   "Feed those hidden microphones."
