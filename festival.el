@@ -2,7 +2,7 @@
 ;; Copyright 1999-2017 by Dave Pearson <davep@davep.org>
 
 ;; Author: Dave Pearson <davep@davep.org>
-;; Version: 1.6
+;; Version: 1.7
 ;; Keywords: games, speech
 ;; URL: https://github.com/davep/festival.el
 
